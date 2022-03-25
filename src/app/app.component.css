@@ -4,7 +4,7 @@ header {
     margin-left: 7vw;
     color: rgb(132, 154, 62);
     display: flex;
-    height: max(6rem, 10vh);
+    height: 12vh;
 }
 
 header section {
@@ -55,16 +55,30 @@ header section img {
 main {
     margin-left: 7vw;
     display: flex;
-    height: 90vh;
+    height: 88vh;
     flex-direction: row;
 }
 
 .kitchen {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.kitchen span {
+    position: absolute;
+    bottom: 0%;
+    display: flex;
+    left: 0%;
+    background-color: rgb(230, 236, 230);
+    padding: 0 2%;
 }
 
 .kitchen img {
     width: 15vw;
+    height: 8vw;
 }
 
 
@@ -93,4 +107,191 @@ main {
     width: 84%;
     background-color: rgb(234, 234, 234);
     margin-left: 2.55vw;
+}
+
+.carrusel-img {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.8vw;
+    margin-left: 6vw;
+    margin-top: 4vw;
+    width: 42vw;
+    justify-content: center;
+}
+
+.carrusel-img div img {
+    width: 11vw;
+    height: 10vw;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.imagen-select {
+    width: 53vw;
+    display: flex;
+    justify-content: center;
+    animation-name: opacity;
+    animation-duration: 0.5s;
+    position: relative;
+}
+
+.imagen-select span {
+    position: absolute;
+    bottom: 14%;
+    left: 0vw;
+    padding: 0.5% 8%;
+    background-color: #00000070;
+    font-size: 1.25vw;
+    color: rgb(159, 161, 166);
+}
+
+.imagen-select img {
+    width: 86%;
+    height: 50vh;
+    margin-top: 2vw;
+}
+
+.column {
+    position: absolute;
+    width: 16vw;
+    right: 3vw;
+    background-color: rgb(216, 216, 216);
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.column span {
+    font-size: 5vw;
+    margin: 0 auto;
+    margin-top: 2.5vw;
+    margin-bottom: 2.5vw;
+    color: rgb(143, 146, 129);
+}
+
+.column hr {
+    width: 90%;
+}
+
+.column p {
+    margin: 0 auto;
+    padding: 0 2vw;
+    color: rgb(67, 67, 67);
+    animation-name: opacity;
+    animation-duration: 0.5s;
+}
+
+.column h1 {
+    font-size: 1vw;
+    padding: 2vw;
+    color: rgb(92, 93, 86);
+    text-align: center;
+}
+
+.divCuandoSeeLess {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: center;
+    justify-items: center;
+}
+
+.divCuandoSeemore {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1vw;
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-y: scroll;
+    height: 42vh;
+    margin: 0 auto;
+    padding: 4%;
+}
+
+.divCuandoSeemore::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+.divCuandoSeemore::-webkit-scrollbar-thumb {
+    background-color: rgb(47, 47, 47);
+    border-radius: 0.5rem;
+}
+
+.column div div {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.column div div img {
+    width: 100%
+}
+
+.column div div span {
+    font-size: 1vw;
+    position: absolute;
+    z-index: 2;
+    background-color: rgb(230, 236, 230);
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    color: black;
+}
+
+.chaplin {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.seeMore {
+    text-decoration: underline;
+    margin-top: 5% !important;
+    font-size: 0.7vw;
+    color: rgb(132, 154, 62) !important;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+@keyframes AnimationIMGselect {
+    from {
+        width: 11vw;
+        height: 10vw;
+        margin-top: 0vw;
+        filter: grayscale(100) opacity(70%);
+    }
+    to {
+        width: 13vw;
+        height: 12vw;
+        margin-top: -1vw;
+        filter: none;
+    }
+}
+
+@keyframes AnimationCollectionselect {
+    from {
+        width: 15vw;
+        height: 8vw;
+        margin: 0;
+        filter: none;
+    }
+    to {
+        width: 13vw;
+        height: 7vw;
+        filter: grayscale(50) opacity(70%);
+        margin-top: 0.5vw;
+        margin-bottom: 0.5vw;
+    }
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

@@ -12,16 +12,41 @@
     </div>
     <!--imagenes de scroll-->
     <div class="kitchens">
+        <!--imagenPrincipal-->
         <div class="kitchen">
-            <img src="https://proxising.com/casalux/api/{{datosApi.image}}" alt="kitchen">
+            <img src="https://proxising.com/casalux/api/{{imgPrincipal}}" alt="kitchen">
+            <span>{{nameCollection}}</span>
         </div>
+        <!--imagenes de la coleccion-->
         <div (click)="preview(contenido.id)" class="kitchen" *ngFor="let contenido of imgApi">
-            <img src="https://proxising.com/casalux/api/{{contenido.photos[0].image}}" alt="kitchen">
+            <img id="{{contenido.id}}" src="https://proxising.com/casalux/api/{{contenido.photos[0].image}}" alt="kitchen">
+            <span>P {{contenido.id}}</span>
         </div>
     </div>
-    <!---->
+    <!--parte de la previsualizacion de las colleciones-->
     <div class="contenido">
-        <div class="carrusel-img"></div>
-        <div class="imagen-select"></div>
+        <div class="carrusel-img">
+            <div (click)="seleccionarimg(img.image)" *ngFor="let img of imgSeleccionada">
+                <img id="{{img.image}}" src="https://proxising.com/casalux/api/{{img.image}}" alt="preview">
+            </div>
+        </div>
+        <div [ngStyle]="{'display':display}" class="imagen-select">
+            <img src="https://proxising.com/casalux/api/{{previewimg}}" alt="preview-select">
+            <span>CASALUX Luxury Kitchen Collection</span>
+        </div>
     </div>
+    <section class="column">
+        <span>P{{id}}</span>
+        <hr>
+        <p *ngIf="pVisible">Lorem ipsum dolor sit amet consectetur adipisicing elit. A consequatur ducimus iste, beatae mollitia tempore neque laudantium vitae atque odit ullam!.</p>
+        <h1>WHAT YOU HAVE IN THIS COLLECTION</h1>
+        <div class="{{classDivImg}}">
+            <div class="{{img.name}}" *ngFor="let img of imgContent">
+                <img src="https://proxising.com/casalux/api/{{img.image}}" alt="contents">
+                <span *ngIf="spanVisible">{{img.name}}</span>
+            </div>
+
+        </div>
+        <p (click)="FuctionSeeMore()" class="seeMore">{{SeeMore}}</p>
+    </section>
 </main>
