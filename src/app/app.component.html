@@ -1,0 +1,27 @@
+<header>
+    <section>
+        <img src="../assets/logo edit.png" alt="logo">
+        <h1>CASALUX <span>Luxury Kitchens</span></h1>
+
+    </section>
+</header>
+<main>
+    <!--Barra lateral izquierda-->
+    <div class="menu">
+        <img src="../assets/icon-menu.png" alt="icon-hamburgesa">
+    </div>
+    <!--imagenes de scroll-->
+    <div class="kitchens">
+        <div class="kitchen">
+            <img src="https://proxising.com/casalux/api/{{datosApi.image}}" alt="kitchen">
+        </div>
+        <div (click)="preview(contenido.id)" class="kitchen" *ngFor="let contenido of imgApi">
+            <img src="https://proxising.com/casalux/api/{{contenido.photos[0].image}}" alt="kitchen">
+        </div>
+    </div>
+    <!---->
+    <div class="contenido">
+        <div class="carrusel-img"></div>
+        <div class="imagen-select"></div>
+    </div>
+</main>
